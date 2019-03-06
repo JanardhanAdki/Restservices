@@ -15,19 +15,19 @@ public class AddressInfo {
 	private String streetName;
 	private String areaName;
 	private String city;
-	private int empid;
+	private int empId;
 	
 	public AddressInfo() {
 
 	}
 
-	public int getEmpid() {
-		return empid;
+	public int getEmpId() {
+		return empId;
 	}
 
 
-	public void setEmpid(int empid) {
-		this.empid = empid;
+	public void setEmpId(int empid) {
+		this.empId = empid;
 	}
 
 
