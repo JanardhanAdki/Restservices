@@ -1,0 +1,79 @@
+package com.ing.team3.modal;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
+public class AddressInfo {
+
+	@Id
+	@GeneratedValue
+	@Column(name = "address_id")
+	private int id;
+	private String streetName;
+	private String areaName;
+	private String city;
+	private int empid;
+	
+	public AddressInfo() {
+
+	}
+
+	public int getEmpid() {
+		return empid;
+	}
+
+
+	public void setEmpid(int empid) {
+		this.empid = empid;
+	}
+
+
+	
+	public int getId() {
+		return id;
+	}
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
+	public String getStreetName() {
+		return streetName;
+	}
+
+
+	public void setStreetName(String streetName) {
+		this.streetName = streetName;
+	}
+
+
+	public String getAreaName() {
+		return areaName;
+	}
+
+
+	public void setAreaName(String areaName) {
+		this.areaName = areaName;
+	}
+
+
+	public String getCity() {
+		return city;
+	}
+
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	@Override
+	public String toString() {
+		return "AddressInfo [id=" + id + ", streetName=" + streetName + ", areaName=" + areaName + ", city=" + city
+				+ ", empid=" + empid + "]";
+	}
+}

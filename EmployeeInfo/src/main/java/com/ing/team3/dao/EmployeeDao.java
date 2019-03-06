@@ -1,12 +1,11 @@
 package com.ing.team3.dao;
 
-import java.util.List;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.ing.team3.modal.Employee;
 
-public interface EmployeeDao extends CrudRepository<Employee, Integer>  {
+public interface EmployeeDao extends JpaRepository<Employee, Integer>  {
 	
 	
 }

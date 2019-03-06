@@ -27,6 +27,14 @@ public class EmployeeService
 	public void addEmployee(Employee emp) {
 
 		employeeDao.save(emp);
+		 
+	}
+	
+	public int getEmployeeId(Employee emp) {
+
+		Employee e = employeeDao.save(emp);
+		return e.getId();
+		 
 	}
 	
 	public void updateEmployee(Employee emp)

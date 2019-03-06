@@ -17,7 +17,15 @@ public class Employee {
 	
 	@JoinColumn(name = "address_id")
 	@OneToOne(cascade = CascadeType.ALL)
-	private Address address;
+	private AddressInfo addressInfo;
+
+	public AddressInfo getAddressInfo() {
+		return addressInfo;
+	}
+
+	public void setAddressInfo(AddressInfo addressInfo) {
+		this.addressInfo = addressInfo;
+	}
 
 	public Employee() {
 
@@ -26,14 +34,6 @@ public class Employee {
 	/*
 	 * @OneToMany private Address address;
 	 */
-
-	public Address getAddress() {
-		return address;
-	}
-
-	public void setAddress(Address address) {
-		this.address = address;
-	}
 
 	public Employee(int id, String name) {
 		super();
@@ -59,4 +59,8 @@ public class Employee {
 		this.name = name;
 	}
 
+	@Override
+	public String toString() {
+		return "Employee [id=" + id + ", name=" + name + ", addressInfo=" + addressInfo + "]";
+	}
 }
