@@ -1,15 +1,15 @@
 package com.ing.team3.service;
 
-import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 
 import com.ing.team3.dao.EmployeeDao;
 import com.ing.team3.modal.Employee;
 
-
+@Service
 public class EmployeeService 
 {
 	@Autowired
@@ -37,5 +37,12 @@ public class EmployeeService
 	public void deleteEmployee(int id) {
 		employeeDao.deleteById(id);
 	}
+
+	public ResponseEntity getAllEmployees() {
+		return (ResponseEntity.ok(employeeDao.findAll()));
+		
+	}
+	
+	
 
 }

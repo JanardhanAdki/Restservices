@@ -6,7 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Address {
+public class AddressInfo {
 
 	@Id
 	@GeneratedValue
@@ -15,13 +15,23 @@ public class Address {
 	private String streetName;
 	private String areaName;
 	private String city;
+	private int empid;
 	
-
-	public Address() {
+	public AddressInfo() {
 
 	}
 
+	public int getEmpid() {
+		return empid;
+	}
 
+
+	public void setEmpid(int empid) {
+		this.empid = empid;
+	}
+
+
+	
 	public int getId() {
 		return id;
 	}

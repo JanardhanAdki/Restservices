@@ -15,15 +15,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ing.team3.modal.Employee;
-import com.ing.team3.service.EmployeeService;
+import com.ing.team3.modal.AddressInfo;
+import com.ing.team3.service.AddressInfoService;
 
 @RestController
 @RequestMapping("/")
-public class EmployeeController {
+public class AddressInfoController {
 
 	@Autowired
-	private EmployeeService employeeService;
+	private AddressInfoService addressInfoService;
 
 	@RequestMapping("/home")
 	public String message() {
@@ -31,29 +31,29 @@ public class EmployeeController {
 		return "Hello welcome";
 	}
 
-	@PostMapping("/employees")
-	public void addEmployee(@RequestBody Employee employee) {
-		employeeService.addEmployee(employee);
+	@PostMapping("/addressinfo")
+	public void addEmployee(@RequestBody AddressInfo addressInfo) {
+		addressInfoService.addAddrssInfo(addressInfo);;
 		String response = "{\"success\": true, \"message\": Employee has been added successfully.}";
 	}
 
-	@RequestMapping(method = RequestMethod.PUT, value = "/employees/{id}")
-	public void updateEmployee(@RequestBody Employee employee, @PathVariable String id) {
-		employeeService.updateEmployee(employee);
+	@RequestMapping(method = RequestMethod.PUT, value = "/addressinfo/{id}")
+	public void updateEmployee(@RequestBody AddressInfo addressInfo, @PathVariable String id) {
+		addressInfoService.updateAddressInfo(addressInfo);
 		String response = "{\"success\": true, \"message\": Employee has been updated successfully.}";
 	}
 
-	@DeleteMapping("/employees/{id}")
+	@DeleteMapping("/addressinfo/{id}")
 	public void deleteEmployee(@PathVariable int id) {
-		employeeService.deleteEmployee(id);
+		addressInfoService.deleteAddressInfo(id);
 		String response = "{\"success\": true, \"message\": Employee has been deleted successfully.}";
 	}
 
 	@SuppressWarnings("unchecked")
-	@GetMapping("/allemployees")
-	public ResponseEntity<Employee>  getEmployees() {
+	@GetMapping("/alladdressinfo")
+	public ResponseEntity<AddressInfo>  getEmployees() {
 		
-		return employeeService.getAllEmployees();
+		return addressInfoService.getAddrssInfo();
 		//String response = "{\"success\": true, \"message\": Employees retrieved successfully.}";
 	}
 
