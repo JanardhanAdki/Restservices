@@ -33,6 +33,7 @@ public class EmployeeController {
 
 	@PostMapping("/employees")
 	public void addEmployee(@RequestBody Employee employee) {
+		System.out.println("Janardhan: "+employee.getAddressInfo().getEmpId());
 		employeeService.addEmployee(employee);
 		String response = "{\"success\": true, \"message\": Employee has been added successfully.}";
 	}
